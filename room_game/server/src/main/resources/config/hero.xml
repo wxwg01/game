@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/** 生命 */
+HP,
+/** 怒气 */
+MP,
+/** 攻击 */
+ATT,
+/** 格挡率 万分比*/
+BLOCK,
+/** 格挡反击率 */
+BATTACK,
+/** 闪避 万分比*/
+MISS,
+/** 暴击 */
+CRIT,
+/** 抗暴 */
+ANTICRIT,
+/** 先手，值越大越优先 */
+INTITATE
+-->
+<def>
+    <unit id="1" name="街头拳手" icon="" res="" sex="1"
+          prop="{'HP':5,'MP':300,'ATT':1,'BLOCK':10000,'BATTACK':1000,'MISS':100,'CRIT':0,'ANTICRIT':0,'INTITATE':0}"/>
+    <unit id="2" name="李小龙" icon="" res="" sex="1"
+          prop="{'HP':5,'MP':300,'ATT':1,'BLOCK':10000,'BATTACK':1000,'MISS':100,'CRIT':0,'ANTICRIT':0,'INTITATE':0}"/>
+</def>

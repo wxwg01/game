@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- reserved field names:_length,code,buf -->
+<!-- client to server packet: type 0 -->
+<!-- server to client packet: type 1 -->
+<!-- ref means value type,not packet(no id) -->
+<!-- id start from 500 -->
+<!-- type : 0 client,1 server,-1 only c# code -->
+<packets package="arpg.packets" version="0.6.0">
+    <packet id="10001" name="CLogin" type="0" des="登陆">
+        <field name="account" type="string" des="账号"/>
+        <field name="pwd" type="string" des="密码"/>
+    </packet>
+    <packet id="10002" name="CCreateRole" type="0" des="创建角色">
+        <field name="name" type="string" des="账号"/>
+        <field name="sex" type="byte" des="0未知1男2女"/>
+        <field name="headUrl" type="string" des="头像地址"/>
+    </packet>
+    <packet id="10101" name="CFastJoinRoom" type="0" des="快速加入房间">
+    </packet>
+    <packet id="10102" name="CRound" type="0" des="回合数据">
+        <field name="type" type="byte" des="1左2右"/>
+        <field name="action" type="int" des="0未操作，1打2防3畜力4技能"/>
+        <field name="skillId" type="int" des=""/>
+    </packet>
+    <!-- ######################################### -->
+    <packet id="20001" name="SLogin" type="1" des="登陆">
+        <field name="uuid" type="string" des="人物唯一ID"/>
+        <field name="player" type="ref" refType="PlayerData" des="玩家信息,未创角色返回null"/>
+    </packet>
+    <packet id="20002" name="SCreateRole" type="1" des="创建角色返回">
+        <field name="errorcode" type="int" des="0成功1001:保存角色数据失败!,1002创建角色角色失败!,1003:没有找到账号，请先登陆!"/>
+    </packet>
+    <packet id="20101" name="SFastJoinRoom" type="1" des="快速加入房间返回">
+        <field name="roomid" type="int" des="房间号"/>
+        <field name="errorcode" type="int" des="0成功，其它为错误码"/>
+        <field name="playerArr" type="refArray" refType="PlayerData" des="所有玩家"/>
+    </packet>
+    <packet id="20102" name="SStartRound" type="1" des="回合开始">
+        <field name="round" type="short" des="回合数"/>
+        <field name="timeOut" type="int" des="倒计时"/>
+    </packet>
+    <packet id="20103" name="SRoundResult" type="1" des="回合战报">
+        <field name="round" type="short" des="回合数"/>
+        <field name="timeOut" type="int" des=""/>
+        <field name="left" type="refArray" refType="ActionData" des="左拳"/>
+        <field name="right" type="refArray" refType="ActionData" des="右拳"/>
+    </packet>
+    <packet id="20104" name="SRoundEnd" type="1" des="所有回合结束">
+    </packet>
+    <packet id="20105" name="SExpChange" type="1" des="人物经验变化">
+        <field name="uuid" type="string" des="人物唯一ID"/>
+        <field name="exp" type="long" des="当前人物经验"/>
+        <field name="expChange" type="long" dex="变化的数量"/>
+    </packet>
+    <packet id="20106" name="SGoldChange" type="1" des="">
+        <field name="uuid" type="string" des="人物唯一ID"/>
+        <field name="gold" type="long" des="当前"/>
+        <field name="goldChange" type="long" dex="变化的数量"/>
+    </packet>
+    <packet id="20107" name="SMonmeyChange" type="1" des="">
+        <field name="uuid" type="string" des="人物唯一ID"/>
+        <field name="monmey" type="int" des="当前"/>
+        <field name="monmeyChange" type="int" dex="变化的数量"/>
+    </packet>
+    <packet id="20108" name="SLevelChange" type="1" des="">
+        <field name="uuid" type="string" des="人物唯一ID"/>
+        <field name="level" type="long" des="当前"/>
+        <field name="levelChange" type="long" dex="变化的数量"/>
+    </packet>
+    <!-- ========================================== -->
+    <ref name="PlayerData" des="玩家属性">
+        <field name="uuid" type="string" des="唯一id"/>
+        <field name="name" type="string" des="姓名"/>
+        <field name="level" type="short" des="等级"/>
+        <field name="exp" type="long" des="经验"/>
+        <field name="gold" type="long" des="金钱"/>
+        <field name="monmey" type="int" des="钻石"/>
+        <field name="roleId" type="int" des="角色Id"/>
+        <field name="battleData" type="ref" refType="BattleData" des="钻石"/>
+    </ref>
+    <ref name="ActionData" des="回合数据">
+        <field name="uuid" type="string" des="唯一id"/>
+        <field name="action" type="byte" des="0未操作，1打2防3畜力4技能"/>
+        <field name="skillId" type="byte" des="0未知1男2女"/>
+        <field name="time" type="int" des="毫秒"/>
+        <field name="hp" type="int" des="血量"/>
+        <field name="changeHp" type="int" des="变化的血量"/>
+        <field name="isCrit" type="int" des="0不是暴击，1暴击"/>
+        <field name="mp" type="int" des="怒气"/>
+        <field name="changeMp" type="int" des="变化的怒气"/>
+        <field name="action2" type="int" des="0不触发，1格挡，2闪避"/>
+        <field name="action2ChangeHp" type="int" des="伤害"/>
+        <field name="action2ChangeMp" type="int" des="怒气"/>
+    </ref>
+    <ref name="BattleData" des="回合数据">
+        <field name="uuid" type="string" des="唯一id"/>
+        <field name="battlenum" type="int" des="总战斗数"/>
+        <field name="winnum" type="int" des="胜场"/>
+        <field name="attacknum" type="int" des="攻击数"/>
+        <field name="blocknum" type="int" des="格档数"/>
+        <field name="xulinum" type="int" des="畜力数"/>
+    </ref>
+</packets>
+

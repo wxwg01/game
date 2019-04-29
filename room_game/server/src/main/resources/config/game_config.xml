@@ -1,0 +1,20 @@
+<!--
+    <hitSuccHpDown>攻击减血</hitSuccHpDown>
+    <hitSuccMpAdd>攻击加蓝</hitSuccMpAdd>
+    <hitBlockMpAdd>攻击被格挡加蓝</hitBlockMpAdd>
+    <beHitMpAdd>被攻击加蓝</beHitMpAdd>
+    <beHitHpDown>被攻击减血</beHitHpDown>
+    <blockMpAdd>格挡成功加蓝</blockMpAdd>
+    <blockHpDown>格挡成功减血</blockHpDown>
+    <xuliMpAdd>蓄力加蓝</xuliMpAdd>
+-->
+<xml>
+    <hitSuccHpDown>0</hitSuccHpDown>
+    <hitSuccMpAdd>20</hitSuccMpAdd>
+    <hitBlockMpAdd>10</hitBlockMpAdd>
+    <beHitMpAdd>10</beHitMpAdd>
+    <beHitHpDown>10</beHitHpDown>
+    <blockMpAdd>5</blockMpAdd>
+    <blockHpDown>5</blockHpDown>
+    <xuliMpAdd>20</xuliMpAdd>
+</xml>

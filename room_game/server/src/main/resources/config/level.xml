@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<def>
+    <unit level="1" ext="300" />
+    <unit level="2" ext="500" />
+    <unit level="3" ext="900" />
+    <unit level="4" ext="1500" />
+</def>
+

@@ -1,0 +1,30 @@
+<!--
+        <id>角色id</id>
+        <name>角色名称</name>
+        <level>初始等级</level>
+        <hp>初始血量  *10 （假设 血量5 配置50）</hp>
+        <skillId>初始技能</skillId>
+        <mpMax>怒气最大值</mpMax>
+        <mp>初始怒气</mp>
+        <miss>初始闪避概率 *100 （假设概率0.1 配置10）</miss>
+        <block>初始格挡概率</block>
+        <blockHit>初始格挡反击概率</blockHit>
+        <cs>初始暴击概率</cs>
+        <cd>初始暴击伤害 100则表示维持原状 200则2倍攻击</cd>
+ -->
+<list>
+    <xml>
+        <id>1</id>
+        <name>菜鸟</name>
+        <level>1</level>
+        <hp>50</hp>
+        <skillId>0</skillId>
+        <mpMax>300</mpMax>
+        <mp>0</mp>
+        <miss>10</miss>
+        <block>0</block>
+        <blockHit>0</blockHit>
+        <cs>10</cs>
+        <cd>100</cd>
+    </xml>
+</list>

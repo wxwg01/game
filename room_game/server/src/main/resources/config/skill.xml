@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<def>
+    <unit>
+        <unit id="1" name="技能1" hitAdd="2.0" blockHitMpAdd="2.0" beHitAdd="1.0" blockHitAdd="1.0" initTime="1" round="3"/>
+        <unit id="2" name="技能2" hitAdd="0.8" blockHitMpAdd="1.0" beHitAdd="1.0" blockHitAdd="1.0" initTime="1" round="3"/>
+        <unit id="3" name="技能3" hitAdd="3.0" blockHitMpAdd="1.0" beHitAdd="1.0" blockHitAdd="0.0" initTime="1" round="3"/>
+    </unit>
+</def>

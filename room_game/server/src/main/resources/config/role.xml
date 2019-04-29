@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<def>
+    <unit id="1" name="街头拳手" icon="" res="" sex="1"
+          prop="{'HP':50,'MP':0,'ATT':1,'BLOCK':100,'BATTACK':10,'MISS':10,'CRIT':0,'ANTICRIT':0,'INTITATE':0}"/>
+    <unit id="2" name="李小龙" icon="" res="" sex="1"
+          prop="{'HP':50,'MP':100,'ATT':1,'BLOCK':100,'BATTACK':10,'MISS':10,'CRIT':0,'ANTICRIT':0,'INTITATE':0}"/>
+    <unit id="3" name="泰森" icon="" res="" sex="1"
+          prop="{'HP':60,'MP':0,'ATT':1,'BLOCK':100,'BATTACK':10,'MISS':10,'CRIT':0,'ANTICRIT':0,'INTITATE':0}"/>
+</def>
