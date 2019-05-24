@@ -1,27 +1,22 @@
 package com.game.service.services.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.game.domain.enums.ErrorCodeEnum;
 import com.game.domain.pojo.client.CCreateRole;
 import com.game.domain.pojo.client.CLogin;
-import com.game.domain.pojo.server.BattleData;
-import com.game.domain.pojo.server.PlayerData;
-import com.game.domain.pojo.server.SCreateRole;
 import com.game.domain.pojo.server.ServerLoginVO;
-import com.game.netBase.message.IMessage;
-import com.game.netBase.session.Session;
-import com.game.netBase.session.SessionManager;
+import com.game.net.base.message.IMessage;
+import com.game.net.base.session.Session;
+import com.game.net.base.session.SessionManager;
 import com.game.service.services.IUserService;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 import java.util.UUID;
 
 /**
  * @author : wanggang
  * @description : <一句话描述类的作用/>
- * @email : wb-wg471966@alibaba-inc.com
+ *
  * @date : 2019/4/29
  */
 @Service

@@ -10,8 +10,8 @@
  */
 package com.game.service.services;
 
-import com.game.netBase.message.IMessage;
-import com.game.netBase.session.Session;
+import com.game.net.base.message.IMessage;
+import com.game.net.base.session.Session;
 
 /**
  * 〈一句话功能简述〉<br>

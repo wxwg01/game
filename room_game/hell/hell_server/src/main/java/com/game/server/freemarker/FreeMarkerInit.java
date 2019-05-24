@@ -22,8 +22,11 @@ public class FreeMarkerInit {
     private FreeMarkerInit() {
     }
 
-    //静态工厂方法
-    public static FreeMarkerInit getInstance() {
+    /**
+     * 静态工厂方法
+     * @return
+     */
+    static FreeMarkerInit getInstance() {
         return single;
     }
 

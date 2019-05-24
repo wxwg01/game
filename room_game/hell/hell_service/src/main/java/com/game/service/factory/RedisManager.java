@@ -27,8 +27,9 @@ public class RedisManager {
     public JedisPool jedisPool;
 
     public void close(Jedis jedis) {
-        if (null != jedis)
+        if (null != jedis){
             jedis.close();
+        }
     }
 
     public String bRPopValue(String name) {

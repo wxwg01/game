@@ -12,13 +12,17 @@
     <artifactId>hell</artifactId>
 
     <modules>
-        <module>hell_net</module>
         <module>hell_server</module>
-        <module>hell_common</module>
         <module>hell_domain</module>
         <module>hell_service</module>
-        <module>hell_event</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.wg</groupId>
+            <artifactId>game_frame</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -10,28 +10,10 @@
  */
 package com.game.service.services.impl;
 
-import com.alibaba.fastjson.JSONObject;
-import com.game.domain.enums.CommonValue;
-import com.game.domain.enums.ErrorCodeEnum;
-import com.game.domain.pojo.RoundData;
-import com.game.domain.pojo.client.CRound;
-import com.game.domain.pojo.server.PlayerData;
-import com.game.domain.pojo.server.SFastJoinRoom;
-import com.game.domain.pojo.server.SStartRound;
-import com.game.netBase.message.IMessage;
-import com.game.netBase.session.Session;
-import com.game.netBase.session.SessionManager;
-import com.game.service.room.RoomManager;
-import com.game.service.room.RoundRunnable;
+import com.game.net.base.message.IMessage;
+import com.game.net.base.session.Session;
 import com.game.service.services.IRoundService;
-import com.game.service.threadPool.TaskExecutePool;
-import org.apache.logging.log4j.LogManager;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -103,32 +85,32 @@ public class RoundServiceImpl implements IRoundService {
     }
 
 
-    @Async("joinRoomPool")
-    public RoundRunnable joinRoom(Session session, Integer roleId) {
-        RoundRunnable room = RoomManager.getInstance().joinRoom(session.getPlayerData().getUuid(), roleId, CommonValue.ROOM_TYPE_NOMALE, CommonValue.rounds);
-        if (Optional.ofNullable(room).isPresent()) {
-            long createTime = room.getCreateTime();
-            if (createTime == 0) {
-                createTime = System.currentTimeMillis();
-                room.setCreateTime(createTime);
-            }
-            if (System.currentTimeMillis() - createTime > CommonValue.joinRoomTime * 1000) {
-                return null;
-            }
-        } else {
-            return null;
-        }
-
-        if (Optional.ofNullable(room.getP1()).isPresent() && Optional.ofNullable(room.getP2()).isPresent()) {
-            return room;
-        } else {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return joinRoom(session, roleId);
-        }
-    }
+    //@Async("joinRoomPool")
+    //public RoundRunnable joinRoom(Session session, Integer roleId) {
+    //    RoundRunnable room = RoomManager.getInstance().joinRoom(session.getPlayerData().getUuid(), roleId, CommonValue.ROOM_TYPE_NOMALE, CommonValue.rounds);
+    //    if (Optional.ofNullable(room).isPresent()) {
+    //        long createTime = room.getCreateTime();
+    //        if (createTime == 0) {
+    //            createTime = System.currentTimeMillis();
+    //            room.setCreateTime(createTime);
+    //        }
+    //        if (System.currentTimeMillis() - createTime > CommonValue.joinRoomTime * 1000) {
+    //            return null;
+    //        }
+    //    } else {
+    //        return null;
+    //    }
+    //
+    //    if (Optional.ofNullable(room.getP1()).isPresent() && Optional.ofNullable(room.getP2()).isPresent()) {
+    //        return room;
+    //    } else {
+    //        try {
+    //            Thread.sleep(1000);
+    //        } catch (InterruptedException e) {
+    //            e.printStackTrace();
+    //        }
+    //        return joinRoom(session, roleId);
+    //    }
+    //}
 
 }
