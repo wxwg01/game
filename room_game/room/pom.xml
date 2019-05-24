@@ -12,4 +12,12 @@
     <artifactId>room</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.wg</groupId>
+            <artifactId>game_frame</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>
