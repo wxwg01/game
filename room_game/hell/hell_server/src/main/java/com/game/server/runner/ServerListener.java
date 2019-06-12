@@ -7,9 +7,9 @@ import com.game.net.base.server.IServer;
 import com.game.server.event.ExpChangeEvent;
 import com.game.server.event.GoldChangeEvent;
 import com.game.server.event.LevelChangeEvent;
-import com.game.server.event.RoundEndEvent;
+import com.game.server.handler.ClientCreateHandler;
 import com.game.server.handler.ClientLoginHandler;
-import com.game.server.handler.ClientRoundHandler;
+import com.game.server.handler.ClientMatchingHandler;
 import com.game.service.services.IRoundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -43,10 +43,6 @@ public class ServerListener implements ServletContextListener {
     private GoldChangeEvent goldChangeEvent;
     @Autowired
     private LevelChangeEvent levelChangeListener;
-    @Autowired
-    private RoundEndEvent roundEndEvent;
-    @Autowired
-    private IRoundService roundService;
 
     /**
      * 启动
@@ -78,7 +74,6 @@ public class ServerListener implements ServletContextListener {
         EventUtil.addListener(2001, levelChangeListener);
         EventUtil.addListener(2002, goldChangeEvent);
         EventUtil.addListener(2003, expChangeEvent);
-        EventUtil.addListener(2004, roundEndEvent);
     }
 
     /**
@@ -86,7 +81,8 @@ public class ServerListener implements ServletContextListener {
      */
     private void handelRegister() {
         messageDictionary.register(1001, ClientLoginHandler.class);
-        messageDictionary.register(1002, ClientRoundHandler.class);
+        messageDictionary.register(1002, ClientCreateHandler.class);
+        messageDictionary.register(1003, ClientMatchingHandler.class);
     }
 
     /**

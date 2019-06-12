@@ -3,6 +3,7 @@ package com.game.service.services.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.game.domain.pojo.client.CCreateRole;
 import com.game.domain.pojo.client.CLogin;
+import com.game.domain.pojo.client.CMatching;
 import com.game.domain.pojo.server.ServerLoginVO;
 import com.game.net.base.message.IMessage;
 import com.game.net.base.session.Session;
@@ -54,10 +55,10 @@ public class UserServiceImpl implements IUserService{
         }
     }
 
-    @Override
-    public void doCreateRoom(IMessage message, Session session) {
-
-    }
+    //@Override
+    //public void doCreateRoom(IMessage message, Session session) {
+    //
+    //}
 
     @Override
     public void doRomeList(IMessage message, Session session) {
@@ -66,6 +67,9 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public void doMatching(IMessage message, Session session) {
+        CMatching bean = (CMatching) message.getParam();
+
+
 
     }
 

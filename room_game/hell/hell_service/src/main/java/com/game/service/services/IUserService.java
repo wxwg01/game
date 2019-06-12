@@ -37,14 +37,12 @@ public interface IUserService {
      * @param session
      */
     void doCreate(IMessage message, Session session);
-
-
-    /**
-     * 创建房间
-     * @param message
-     * @param session
-     */
-    void doCreateRoom(IMessage message,Session session);
+    ///**
+    // * 创建房间
+    // * @param message
+    // * @param session
+    // */
+    //void doCreateRoom(IMessage message,Session session);
 
     /**
      * 房间列表
